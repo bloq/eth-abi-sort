@@ -1,0 +1,61 @@
+{
+  "name": "eth-abi-sort",
+  "version": "1.0.0",
+  "description": "Sort an Ethereum ABI definition for easier comparison",
+  "keywords": [
+    "abi",
+    "ethereum",
+    "sort",
+    "sorter"
+  ],
+  "homepage": "https://github.com/bloq/eth-abi-sort#readme",
+  "bugs": {
+    "url": "https://github.com/bloq/eth-abi-sort/issues"
+  },
+  "license": "MIT",
+  "author": "Gabriel Montes <gabriel@bloq.com>",
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
+  "bin": {
+    "abi-sort": "./cli.js"
+  },
+  "repository": "bloq/eth-abi-sort",
+  "scripts": {},
+  "dependencies": {
+    "json-stable-stringify": "1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.10",
+    "eslint": "8.7.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-node": "11.1.0",
+    "husky": "4.3.8",
+    "lint-staged": "12.2.2",
+    "prettier": "2.5.1"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:node/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "no-process-exit": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,md}": "prettier --write"
+  },
+  "prettier": {}
+}
